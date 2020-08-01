@@ -18,11 +18,6 @@ class Country: NSManagedObject, Mappable {
         super.init(entity: entity, insertInto: context)
     }
     
-    // NOTE: I have seen random crashes in init() and mapping().
-    //       This is NOT part of the code challenge.
-    //
-    // Massive bonus points if you figure it out, but don't spend time on this,
-    // just re-run the app or tests and cross your fingers!
     required init?(map: Map) {
         
         guard map.JSON["name"] != nil,
@@ -35,11 +30,6 @@ class Country: NSManagedObject, Mappable {
         super.init(entity: Self.entity(), insertInto: nil)
     }
     
-    // NOTE: I have seen random crashes in init() and mapping().
-    //       This is NOT part of the code challenge.
-    //
-    // Massive bonus points if you figure it out, but don't spend time on this,
-    // just re-run the app or tests and cross your fingers!
     func mapping(map: Map) {
         
         DispatchQueue.main.async {
