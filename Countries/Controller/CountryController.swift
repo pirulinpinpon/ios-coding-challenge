@@ -30,12 +30,10 @@ class CountryController {
                 assertionFailure("There was an error: \(error!)")
                 return
             }
-            
-            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: String(describing: Country.self))
+            let fetchRequest = NSFetchRequest<Country>(entityName: String(describing: Country.self))
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key:"name", ascending: true)]
             do {
-                if let countries = try DataStore.shared.viewContext.fetch(fetchRequest) as? [Country] {
-                    self.countries = countries // !!!
-                }
+                self.countries = try DataStore.shared.viewContext.fetch(fetchRequest)
                 completionHandler(error)
             } catch let error as NSError {
                 completionHandler(error)
@@ -48,7 +46,7 @@ class CountryController {
     }
     
     func country(at index: Int) -> Country? {
-        guard self.countries.count > index else { return nil }
-        return self.countries[index]
+        guard countries.count > index else { return nil }
+        return countries[index]
     }
 }
