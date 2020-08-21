@@ -48,6 +48,9 @@ class CountryListViewController: UIViewController, UITableViewDataSource {
         if let country = controller?.country(at: indexPath.row) {
             cell.country.text = country.name
             cell.capital.text = country.capital
+            if let capital = country.capital, capital.isEmpty {
+                cell.capitalLabel.text = nil
+            }
             cell.population.text = String(country.population)
             cell.accessibilityIdentifier = "\(country.name!)-Cell"
             cell.country.accessibilityIdentifier = "Country"
