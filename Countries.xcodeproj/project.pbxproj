@@ -27,6 +27,7 @@
 		1AF93B20240EB2F600355AE7 /* CountriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF93B1F240EB2F600355AE7 /* CountriesTests.swift */; };
 		1AF93B2B240EB2F600355AE7 /* CountriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF93B2A240EB2F600355AE7 /* CountriesUITests.swift */; };
 		2C874CA63841404087A631D6 /* Pods_Countries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392AF5C9BC090983F77F3251 /* Pods_Countries.framework */; };
+		96C3746024F0317100D9DAEE /* CountryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C3745F24F0317100D9DAEE /* CountryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		2CB34B181C5E6C83A8895032 /* Pods-Countries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.debug.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.debug.xcconfig"; sourceTree = "<group>"; };
 		392AF5C9BC090983F77F3251 /* Pods_Countries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Countries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94C5FD14DC385ED3C8B27BE9 /* Pods-Countries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.release.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.release.xcconfig"; sourceTree = "<group>"; };
+		96C3745F24F0317100D9DAEE /* CountryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				1AC71A83241BBAEC00BA965E /* Utilities */,
 				1AC71A82241BBAAA00BA965E /* Network */,
 				1AC71A81241BBA8600BA965E /* CoreData */,
+				96C3745E24F0310500D9DAEE /* Controller */,
 				1AC71A80241BBA6300BA965E /* UI */,
 			);
 			path = Countries;
@@ -206,6 +209,14 @@
 				392AF5C9BC090983F77F3251 /* Pods_Countries.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96C3745E24F0310500D9DAEE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				96C3745F24F0317100D9DAEE /* CountryController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		E433ABA8CCDBDB806169DFC5 /* Pods */ = {
@@ -404,6 +415,7 @@
 				1AAA0340240EB7A50073441E /* ServerError.swift in Sources */,
 				1A5628A5241114F400E004AF /* CountryTableViewCell.swift in Sources */,
 				1A8660CB240FCEE700F0A5FE /* Country+CoreDataProperties.swift in Sources */,
+				96C3746024F0317100D9DAEE /* CountryController.swift in Sources */,
 				1AAA033C240EB3A00073441E /* Server.swift in Sources */,
 				1AF93B06240EB2F400355AE7 /* SceneDelegate.swift in Sources */,
 			);
