@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+/// This class is responsible for communicating to the Server and Store layers, avoiding to tightly couple the view with the logic of the app.
 class CountryController {
     
     // MARK:- Properties
