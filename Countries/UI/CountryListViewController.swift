@@ -21,6 +21,7 @@ class CountryListViewController: UIViewController, UITableViewDataSource {
         let formatter = NumberFormatter()
         formatter.locale = Locale(identifier: "en_GB")
         formatter.numberStyle = .decimal
+        return formatter
     }()
     
     // MARK:- Lifecycle methods
