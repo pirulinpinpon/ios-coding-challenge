@@ -30,12 +30,17 @@ class CountryController {
                 assertionFailure("There was an error: \(error!)")
                 return
             }
-            completionHandler(error)
+            
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: String(describing: Country.self))
+            do {
+                if let countries = try DataStore.shared.viewContext.fetch(fetchRequest) as? [Country] {
+                    self.countries = countries // !!!
+                }
+                completionHandler(error)
+            } catch let error as NSError {
+                completionHandler(error)
+            }
         }
-    }
-    
-    func loadCountries() -> [Country] {
-        return countries
     }
     
     func numberOfCountries() -> Int {
