@@ -10,8 +10,20 @@ import UIKit
 
 class CountryListViewController: UIViewController, UITableViewDataSource {
 
+    // MARK: IBOutlets
+    
     @IBOutlet weak var countryTableView: UITableView!
+    
+    // MARK: Properties
+    
     var controller: CountryController?
+    static let populationNumberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "en_GB")
+        formatter.numberStyle = .decimal
+    }()
+    
+    // MARK:- Lifecycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +45,6 @@ class CountryListViewController: UIViewController, UITableViewDataSource {
         }
     }
     
-    
     // MARK:- UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,7 +62,7 @@ class CountryListViewController: UIViewController, UITableViewDataSource {
             if let capital = country.capital, capital.isEmpty {
                 cell.capitalLabel.text = nil
             }
-            cell.population.text = String(country.population)
+            cell.population.text = self.formattedPopulationString(country.population)
             cell.accessibilityIdentifier = "\(country.name!)-Cell"
             cell.country.accessibilityIdentifier = "Country"
             cell.capital.accessibilityIdentifier = "\(country.name!)-Capital"
@@ -62,5 +73,10 @@ class CountryListViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    // MARK: - Private helpers
+    
+    private func formattedPopulationString(_ population: Int32) -> String? {
+        return Self.populationNumberFormatter.string(from: NSNumber(value: population))
+    }
 }
 
